@@ -1,4 +1,4 @@
-﻿using Cosmos.System;
+using Cosmos.System;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -18,7 +18,22 @@ namespace CorntoloOS
         {
             fs = new Sys.FileSystem.CosmosVFS();
             Sys.FileSystem.VFS.VFSManager.RegisterVFS(fs);
+            System.Console.ForegroundColor = System.ConsoleColor.DarkGreen;
             System.Console.Clear();
+            System.Console.Beep();
+            System.Console.WriteLine("CorntoloOS 1.1");
+            System.Console.WriteLine("");
+            System.Console.Beep();
+            System.Console.ForegroundColor = System.ConsoleColor.Magenta;
+            System.Console.WriteLine("[Main Process] Kernel.cs inited!");
+            System.Console.Beep();
+            System.Console.WriteLine("[Main Process] FileSystem inited!");
+            System.Console.Beep();
+            System.Console.WriteLine("[Main Process] System inited!");
+            System.Console.Beep();
+            System.Console.ForegroundColor = System.ConsoleColor.White;
+            System.Console.WriteLine("");
+            System.Console.WriteLine("");
             System.Console.WriteLine("==========");
             System.Console.WriteLine("CorntoloOS");
             System.Console.WriteLine("==========");
@@ -54,6 +69,7 @@ namespace CorntoloOS
                     System.Console.WriteLine("10. deldir >> removing directory");
                     System.Console.WriteLine("11. cd >> move to directoy");
                     System.Console.WriteLine("12. time >> your time");
+                    System.Console.WriteLine("13. beep >> computer beep");
                     System.Console.WriteLine(" ");
                     System.Console.WriteLine(" ");
                     break;
@@ -92,10 +108,10 @@ namespace CorntoloOS
                     System.Console.WriteLine("@@@@@@@@@@");
                     System.Console.WriteLine("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
                     System.Console.ForegroundColor = System.ConsoleColor.White;
-                    System.Console.WriteLine("OS: CorntoloOS 1.0");
+                    System.Console.WriteLine("OS: CorntoloOS 1.1");
                     System.Console.WriteLine("Host: Unknown");
                     System.Console.WriteLine("Kernel: CosmosOS Dev Kit 20241102");
-                    System.Console.WriteLine("Builded: 24.11.2024");
+                    System.Console.WriteLine("Builded: 17.12.2024");
                     string cpuBrand = Cosmos.Core.CPU.GetCPUBrandString();
                     string cpuVendor = Cosmos.Core.CPU.GetCPUVendorName();
                     uint ramInMb = Cosmos.Core.CPU.GetAmountOfRAM();
@@ -190,6 +206,10 @@ namespace CorntoloOS
 
                 case "time":
                     System.Console.WriteLine(DateTime.Now);
+                break;
+
+                case "beep":
+                    System.Console.Beep();
                 break;
             }
         }
